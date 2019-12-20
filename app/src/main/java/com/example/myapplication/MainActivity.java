@@ -101,7 +101,8 @@ public class MainActivity extends AppCompatActivity {
     private void initView(){
         imgViewA = findViewById(R.id.imgViewA);
         imgViewB = findViewById(R.id.imgViewB);
-        
+        imgViewA.setImageDrawable(null);
+        imgViewB.setImageDrawable(null);
     }
 
     /*
@@ -150,8 +151,8 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.btn_bph:
             {
-                TextView tv = findViewById(R.id.sample_text);
-                tv.setText("changed");//查看图片是否改变，用于初期实验用，可删除
+               // TextView tv = findViewById(R.id.sample_text);
+                //tv.setText("changed");//查看图片是否改变，用于初期实验用，可删除
                 Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.pic1);//drawable.pic1为白平衡需要的图片
                 System.out.println("白平衡");
                 System.out.println(bitmap);

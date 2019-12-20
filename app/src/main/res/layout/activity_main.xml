@@ -86,7 +86,7 @@
 
         <ImageView
             android:id="@+id/imgViewA"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
@@ -94,23 +94,17 @@
 
         <ImageView
             android:id="@+id/imgViewB"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
             android:src="@drawable/redeyepic"
             />
 
-        <TextView
-            android:id="@+id/sample_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello,world!"
-
-            />
-
 
         <!---
+
+
                 <ImageView
                     android:id="@+id/imageView7"
                     android:layout_width="166dp"
@@ -151,7 +145,13 @@
                     android:text="Hello,world!"
 
                 />
+<TextView
+            android:id="@+id/sample_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello,world!"
 
+            />
                 -->
     </LinearLayout>
 

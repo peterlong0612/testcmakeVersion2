@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     String strdecode="sdcard/rp.png";
 
     public Uri imgUri;
+    private Bitmap mbitmap;
+    private Bitmap obitmap;
 
     private Button mBtn;
 
@@ -153,24 +155,24 @@ public class MainActivity extends AppCompatActivity {
             {
                // TextView tv = findViewById(R.id.sample_text);
                 //tv.setText("changed");//查看图片是否改变，用于初期实验用，可删除
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.pic1);//drawable.pic1为白平衡需要的图片
+                //Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.pic1);//drawable.pic1为白平衡需要的图片
                 System.out.println("白平衡");
-                System.out.println(bitmap);
-                matrixFromJNI(bitmap);
+                System.out.println(obitmap);
+                matrixFromJNI(obitmap);
                 //iv.setImageBitmap(bitmap);
-                imgViewB.setImageBitmap(bitmap);
+                imgViewB.setImageBitmap(obitmap);
                 break;
             }
             case R.id.btn_lu:
             {
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.lu);//drawable.lu为需要的图片
+                //Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.lu);//drawable.lu为需要的图片
 
                 System.out.println("亮度提升");
 
-                System.out.println(bitmap);
-                lightup(bitmap);
+                System.out.println(obitmap);
+                lightup(obitmap);
                 //lu.setImageBitmap(bitmap);
-                imgViewB.setImageBitmap(bitmap);
+                imgViewB.setImageBitmap(obitmap);
                 break;
             }
             case R.id.btn_re:
@@ -224,8 +226,9 @@ public class MainActivity extends AppCompatActivity {
             ContentResolver cr= this.getContentResolver();
             try{
               //获取图片
-                Bitmap bitmap = BitmapFactory.decodeStream(cr.openInputStream(imgUri));
-                imgViewA.setImageBitmap(bitmap);
+                mbitmap = BitmapFactory.decodeStream(cr.openInputStream(imgUri));
+                obitmap = BitmapFactory.decodeStream(cr.openInputStream(imgUri));
+                imgViewA.setImageBitmap(mbitmap);
             } catch (FileNotFoundException e){
                 Log.e("Exception",e.getMessage(),e);
             }
